@@ -1,0 +1,158 @@
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-delay {
+    transition-delay: 0.15s;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 12px var(--green);
+    }
+
+    50% {
+        opacity: 0.55;
+        box-shadow: 0 0 22px var(--green);
+    }
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.live-indicator,
+.status-dot {
+    animation: pulse 2s infinite;
+}
+
+.hero-security-card {
+    animation: float 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+.hero-visual-3d {
+    animation: visualAppear 1.2s ease both;
+}
+
+@keyframes visualAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.88) translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-visual-3d,
+    .glowing-orb,
+    .network-node {
+        animation: none;
+    }
+}
+.hero-visual-3d {
+    animation: heroVisualAppear 1s ease both;
+}
+
+@keyframes heroVisualAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.88) translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-visual-3d,
+    .network-icon {
+        animation: none;
+    }
+}
+.forensic-content {
+    animation: forensicContentIn 1s ease both;
+}
+
+.forensic-visual {
+    animation: forensicVisualIn 1.2s ease both;
+}
+
+@keyframes forensicContentIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes forensicVisualIn {
+    from {
+        opacity: 0;
+        transform: scale(0.82) rotateY(12deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scan-line,
+    .radar-sweep,
+    .forensic-core,
+    .core-ring,
+    .threat-node,
+    .case-status-dot {
+        animation: none;
+    }
+
+    .forensic-content,
+    .forensic-visual {
+        animation: none;
+    }
+}
